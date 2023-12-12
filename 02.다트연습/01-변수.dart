@@ -9,8 +9,42 @@ void main(List<String> args){
   // 다트 언어는 변수의 형을 선언함이 기본이다!
   // 1. 숫자형 : int - 정수 / double - 실수 / num - 정수, 실수
   int number1 = 2023;
+  // number1 = 3.2;
+
   // number1 = '하하'; -> 처음 선언한 형으로만 할당가능
   print(number1);
-  double number2 = 7;
 
+  // 숫자형도 정수형과 실수형을 철저히 구분함!
+  double number2 = 7;
+  number2 = 3.14;
+  print(number2);
+
+  num number3 = 100;
+  number3 = 7.84;
+  print(number3);
+
+  // 2. 문자형 : String
+  String name = '톰 행크스';
+  // name = 88;
+  print('나는 ' + name + '입니다.');
+
+  // 3. 불린형 : bool
+  bool isTrue = true;
+  print("True니? " + isTrue);
+
+  // 4. 콜렉션
+  // List / Set / Map
+  // 4-1. List형 - 배열과 유사함
+  List<String> we = ['너', '나', '우리'];
+  print(we[2]+'는 모두 친구입니다!');
+  print(we.length);
+
+  // 4-2. Set형 - 순서가 없고 중복되지 않은 데이터 집합
+  Set<int> evens = {2,4,6,8,10};
+  print(evens);
+
+  // 4-3. Map형 - 데이터에 라벨링된 데이터 집합
+  (객체와 유사)
+  Map<Stirng, int> actor = {"이름" : "강동원", "나이" : 40};
+  print(actor);
 }
