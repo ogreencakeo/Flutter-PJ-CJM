@@ -44,7 +44,7 @@ void main(List<String> args){
   print(evens);
 
   // 4-3. Map형 - 데이터에 라벨링된 데이터 집합
-  (객체와 유사)
-  Map<Stirng, int> actor = {"이름" : "강동원", "나이" : 40};
+  // (객체와 유사)
+  Map<String, int> actor = {"이름" : "강동원" , "나이" : 40};
   print(actor);
 }
