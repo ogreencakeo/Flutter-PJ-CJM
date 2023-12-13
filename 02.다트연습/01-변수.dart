@@ -56,11 +56,17 @@ void main(List<String> args) {
 
   // 4-2. Set형
   // -> 순서가 없고 중복되지 않는 데이터집합
+  // -> 순서가 없으므로 호출해서 사용하고자 할때는 List형으로 변환후 사용한다! -> Set형변수.toList()
 
   // Set<int> evens = {2,4,6,8,10};
   // Set<dynamic> evens = {2,4,6,8,10,4,'짝수'};
   var evens = {2,4,6,8,10,4,'짝수'};
   print(evens);
+  print('evens.toList()');
+  print(evens.toList());
+
+  // 변환 후에는 순번으로 출력가능
+  print(evens.toList()[3]);
 
   // 4-3. Map형 - 데이터에 라벨링된 데이터 집합(객체와 유사)
   Map<String,String> actor = {"이름":"강동원","나이":"40"};
