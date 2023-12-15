@@ -36,7 +36,7 @@ void showTxt(var txt){
 // 리턴값의 형은? String
 // 전달값은 List 상수의 순번 값을 받음 
 String makeSubTit(int seq){
-  return '영화 ${leeFight[seq]}의 부제목은? ${subTit[leeFight[seq]]??"부제목 없음"}';
+  return '영화 "${leeFight[seq]}"의 부제목은? "${subTit[leeFight[seq]]??"부제목 없음"}"';
 } // makeSubTit함수 /////////
 
 // [ 다트의 널 세이프티(Null Safety) ]
