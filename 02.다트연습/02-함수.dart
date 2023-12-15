@@ -23,6 +23,7 @@ void main(List<String> args) {
   // 이순신 시리즈 영화 주요 출연자 찍기
   showTxt('이순신 시리즈 영화의 주요 출연배우들 : ${actors}', );
   showTxt('이순신 시리즈 영화의 주요 출연배우들 toList : ${actors.toList()}', );
+  // Set 상수를 List로 형변환하여 함수에 전달!
   showTxt('이순신 시리즈 영화의 주요 출연배우들 actorList : ${actorList(actors.toList())}', );
 
 } // main ////////
