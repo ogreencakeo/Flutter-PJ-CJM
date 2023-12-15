@@ -15,10 +15,15 @@ void main(List<String> args) {
   */
 
   showTxt('이순신에 대해 알아볼까요?');
-// 이순신 시리즈 영화 부제목 찍기
+  // 이순신 시리즈 영화 부제목 찍기
   showTxt(makeSubTit(2)); //노량해전
   showTxt(makeSubTit(1)); //한산도대첩
   showTxt(makeSubTit(0)); // 명량해전
+
+  // 이순신 시리즈 영화 주요 출연자 찍기
+  showTxt('이순신 시리즈 영화의 주요 출연배우들 : ${actors}', );
+  showTxt('이순신 시리즈 영화의 주요 출연배우들 toList : ${actors.toList()}', );
+  showTxt('이순신 시리즈 영화의 주요 출연배우들 actorList : ${actorList(actors.toList())}', );
 
 } // main ////////
 
@@ -70,6 +75,17 @@ void showTxt(var txt){
 String makeSubTit(int seq){
   return '영화 "${leeFight[seq]}"의 부제목은? "${subTit[leeFight[seq]]??"부제목 없음"}"';
 } // makeSubTit함수 /////////
+
+// 배우리스트 찍기 함수 ///////////////
+String actorList(List list){
+  var temp = '';
+  // for문 : for(시;한;증;){코드}
+  // 리스트를 순회하는 for문 : for(변수 in 리스트변수){코드}
+  for(var x in list){ // x - list의 각 개별값 순회
+    temp += '😁$x ';
+  } // for문
+  return temp;
+} // actorList 함수 ////////
 
 // [ 다트의 널 세이프티(Null Safety) ]
 // 개발자가 null 데이터가 생길 경우 에러를 막기 위한
