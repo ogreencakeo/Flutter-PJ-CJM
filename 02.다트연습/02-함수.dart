@@ -55,12 +55,19 @@ void main(List<String> args) {
   showTxt("아직 신에게는 ${minus()}척의 배가 남았습니다!");
   showTxt("아직 신에게는 ${minus()}척의 배가 남았습니다!");
 
+  // 구구단 출력~!
+  showTxt('이순신의 부하중 이순신이 있었다. 그는 전투전에 너무 긴장되어서 구구단을 외웠다! 9단!');
+
 } // main ////////
 
 int shipNum = 13;
 
 // 람다식으로 숫자를 줄이는 함수
 Function minus = () => --shipNum;
+
+// Function gugudan = () => {
+
+// }
 
 void japanShip(Function bomb){
   print('나는 일본배야! 각오들 해!');
