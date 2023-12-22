@@ -176,6 +176,7 @@ void testClass(){
   JeeHyun jh = JeeHyun('남지현');
   print(jh.age());
   print(jh.gender());
+  print(jh.eat()); // 지금 아무것도 안먹는다! // 재정의 안한 메서드는 Saram의 원본 메서드가 출력됨!
 
   // 추상클래스의 상속한 추상클래스를 상속한 서준 클래스 인스턴스 생성
   SeoJun sj = SeoJun('박서준');
