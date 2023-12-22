@@ -188,7 +188,7 @@ class JunHo extends Namja with Hobby, Singer{
   JunHo(String name) : super(name);
 
   // 필수 재정의 메서드 : age()
-  @override
+  @override 
   String age() => '$name씨는 33살이다!';
 
   // 선택적 재정의 : cook() -> Hobby 믹스인 클래스 메서드
@@ -218,16 +218,26 @@ void testClass(){
   // print(KyungSu().eat());
   // print(KyungSu().say());
 
-  // 추상클래스를 일반 상속받은 지현클래스 인스턴스 생성
+  // 추상클래스를 일반 상속받은 
+  // 지현클래스 인스턴스 생성
   JeeHyun jh = JeeHyun('남지현');
   print(jh.age());
   print(jh.gender());
   print(jh.eat()); // 지금 아무것도 안먹는다! // 재정의 안한 메서드는 Saram의 원본 메서드가 출력됨!
 
-  // 추상클래스의 상속한 추상클래스를 상속한 서준 클래스 인스턴스 생성
+  // 추상클래스의 상속한 추상클래스를 상속한 
+  // 서준 클래스 인스턴스 생성
   SeoJun sj = SeoJun('박서준');
   print(sj.age());
   print(sj.eat());
+
+  // 추상클래스와 여러 믹스인 클래스를 상속받은 준호 클래스
+  // 인스턴스 생성하기
+  JunHo jho = JunHo('이준호');
+  print(jho.gender());
+  print(jho.age());
+  print(jho.cook());
+  print(jho.sing());
 } // testClass
 
 main(){
