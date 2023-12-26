@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 최상위 위젯 : 전체틀 잡아줌
-    return MaterialApp(
+    return const MaterialApp(
       // home에 작성하는 위젯이 실제 이 앱이 표시하는 위젯
       home : StorePage(), // 이 클래스를 아래쪽에 생성함!
     );
@@ -25,6 +25,13 @@ class StorePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: SafeArea(
+        // 앱기본 방향시작은 세로방향
+        // (Column이다! - Row를 포함한다.)
+        child: Column(
+        
+        ),),
+    );
   }
 }
