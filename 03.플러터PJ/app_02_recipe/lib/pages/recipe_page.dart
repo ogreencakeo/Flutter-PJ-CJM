@@ -22,7 +22,38 @@ class RecipePage extends StatelessWidget {
     // 가장 바깥쪽 레이아웃 Scaffold 위젯으로 시작!
     return Scaffold(
       // 전체 배경색 설정하기
-      backgroundColor: Colors.amber,
-    );
+      backgroundColor: Colors.blue,
+      // 앱바 클래스 호출하기
+      appBar: _buildRecipeAppBar(),
+    ); // Scaffold
   }
 }
+
+// 앱바 클래스 만들기 ///////////////
+// 리턴형은 AppBar
+// 앱바 메서드 이름은 주로 (언더바_)로 시작한다.
+AppBar _buildRecipeAppBar() {
+  return AppBar(
+    // 앱바 배경색
+    backgroundColor: Colors.white,
+    // elevation 속성 : 앱바 그림자 효과 조정 속성
+    elevation: 1.0,
+    // actions 속성 :앱바 컨텐츠 파트 [리스트형]
+    actions: [
+      // 아이콘 위젯 - Icon
+      Icon(
+        // 아이콘 옵션중 쿠퍼티노가 유명함
+        // 주의 : 쿠퍼티노 앱 상단 import 추가
+      )
+    ],
+  );
+} // _buildRecipeAppBar 메서드 ////////
+
+// 앱바는 앱 최상단 구역을 차지하며
+// 구성요소로는
+// 1. leading - 앱바 상단왼쪽끝 파트
+// 2. title - 앱바 타이틀 파트
+// 3. actions - 앱바 컨텐츠파트
+// 4. flexibleSpace - 앱바 하단파트 위 공간
+// -> SafeArea위젯에서 이 공백을 자동 조정함
+// 5. bottom - 앱바 하단파트
