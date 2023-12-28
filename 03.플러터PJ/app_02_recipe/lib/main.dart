@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // fontFamilyFallback : [리스트형 폰트명 데이터 입력]
         fontFamilyFallback: ["Diphylleia", "PatuaOne"],
       ),
-      // 레시피 홈 클래스 상단에 import후 호출!
+      // 레시피 홈 클래스 상단에 import후
       home: RecipePage(),
     );
   }
