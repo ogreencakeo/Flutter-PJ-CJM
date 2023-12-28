@@ -1,35 +1,27 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  //플러터의 출발 메서드!
   runApp(const MyApp());
 }
 
+// 초기호출 클래스는비상태 위젯을 상속받음
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // 머티리얼앱 위젯을 사용하여 디자인한다.
   @override
   Widget build(BuildContext context) {
+    // 머티리얼앱 시작!
     return MaterialApp(
-      title: 'Flutter Demo',
+      // 디버그모드 표시 숨기기
+      debugShowCheckedModeBanner: false,
+      // theme 테마 속성 - 앱 전체에 적용하는 속성값들 셋팅
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        // 전체 폰트 적용하기 : fontFamily 속성은 하나의 폰트만 적용됨
+        // fontFamilyFallback 속성이 여러폰트 적용됨
+        // fontFamilyFallback : [리스트형 폰트명 데이터 입력]
+        fontFamilyFallback: ["Diphylleia", "PatuaOne"]
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
