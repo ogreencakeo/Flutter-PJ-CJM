@@ -24,10 +24,17 @@ class RecipePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // 가장 바깥쪽 레이아웃 Scaffold 위젯으로 시작!
     return Scaffold(
-      // 전체 배경색 설정하기
+      // 1. 전체 배경색 설정하기
       backgroundColor: Colors.blue,
-      // 앱바 클래스 호출하기
+      // 2. 앱바 클래스 호출하기
       appBar: _buildRecipeAppBar(),
+      // 3. body 구현하기
+      body: Column(
+        children: [
+          // 레시피 페이지 전체 타이틀
+          RecipeTitle(),
+        ],
+      ),
     ); // Scaffold
   }
 }
