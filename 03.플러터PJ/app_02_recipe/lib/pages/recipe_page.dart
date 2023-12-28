@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 
+// 쿠퍼티노 아이콘 사용위해 쿠퍼티노앱 추가
+import 'package:flutter/cupertino.dart';
+
 // 레시피 컴포넌트 불러오기 : 타이틀, 메뉴, 리스트아이템
 import 'package:app_02_recipe/components/recipe_title.dart';
 import 'package:app_02_recipe/components/recipe_menu.dart';
@@ -44,7 +47,18 @@ AppBar _buildRecipeAppBar() {
       Icon(
         // 아이콘 옵션중 쿠퍼티노가 유명함
         // 주의 : 쿠퍼티노 앱 상단 import 추가
-      )
+        CupertinoIcons.search,
+        color: const Color.fromARGB(255, 7, 41, 100),
+      ),
+      SizedBox(
+        width: 15,
+      ), // 사이간격 박스
+      Icon(
+        // 아이콘 옵션중 쿠퍼티노가 유명함
+        // 주의 : 쿠퍼티노 앱 상단 import 추가
+        CupertinoIcons.heart,
+        color: Colors.redAccent,
+      ),
     ],
   );
 } // _buildRecipeAppBar 메서드 ////////
