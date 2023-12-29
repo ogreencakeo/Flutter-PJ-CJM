@@ -30,6 +30,12 @@ class RecipeListItem extends StatelessWidget {
         Text(
           title,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+
+        // 3. 레시피 소개글
+        Text(
+          "당신은 당신이 직접 만든 $title를 가지고 계신가요? 만약 없다면 여기 쉽고 휼륭한 $title를 보고 따라해 보세요! 틀림 없이 좋은 결과를 만나실 겁니다!",
+          style: TextStyle(color: Colors.black, fontSize: 14),
         )
       ],
     );
