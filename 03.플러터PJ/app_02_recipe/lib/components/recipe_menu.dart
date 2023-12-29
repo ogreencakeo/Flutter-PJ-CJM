@@ -6,11 +6,20 @@ class RecipeMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        // 박스형 메뉴 생성 메서드 호출
-        _buildMenuItem(Icons.food_bank, '전체')
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+      child: Row(
+        children: [
+          // 박스형 메뉴 생성 메서드 호출
+          _buildMenuItem(Icons.food_bank, 'All'),
+          Spacer(),
+          _buildMenuItem(Icons.emoji_food_beverage, 'Coffe'),
+          Spacer(),
+          _buildMenuItem(Icons.fastfood, 'Burger'),
+          Spacer(),
+          _buildMenuItem(Icons.local_pizza, 'Pizza'),
+        ],
+      ),
     );
   }
 }
@@ -36,9 +45,16 @@ Widget _buildMenuItem(IconData mIcon, String text) {
         color: Colors.redAccent,
         size: 30,
       ),
+      // 내가 원하는 크기만큼 사이간격주는
+      // 방법은 SizedBox(width / height)
+      SizedBox(
+        height: 5,
+      ),
+      // 3-2. 글자
       Text(
         text,
-        style: TextStyle(color: Colors.red.shade900),
+        style:
+            TextStyle(color: Colors.red.shade900, fontWeight: FontWeight.bold),
       )
     ]),
   );
