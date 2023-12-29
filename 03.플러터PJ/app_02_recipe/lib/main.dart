@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
         // 전체 폰트 적용하기 : fontFamily 속성은 하나의 폰트만 적용됨
         // fontFamilyFallback 속성이 여러폰트 적용됨
         // fontFamilyFallback : [리스트형 폰트명 데이터 입력]
-        fontFamilyFallback: ["Diphylleia", "PatuaOne"],
+        fontFamilyFallback: [
+          "PatuaOne",
+          "Diphylleia",
+        ],
       ),
       // 레시피 홈 클래스 상단에 import후
       home: RecipePage(),

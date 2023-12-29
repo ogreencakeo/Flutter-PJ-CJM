@@ -57,7 +57,10 @@ Widget _buildMenuItem(IconData mIcon, String text) {
           Text(
             text,
             style: TextStyle(
-                color: Colors.red.shade900, fontWeight: FontWeight.bold),
+              color: Colors.red.shade900,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           )
         ]),
   );
