@@ -38,24 +38,27 @@ Widget _buildMenuItem(IconData mIcon, String text) {
     // 2. 박스 세부옵션 설정 - decoration
     decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
     // 3. 박스 하위요소 속성 : 단일요소 -> child
-    child: Column(children: [
-      // 3-1. 아이콘
-      Icon(
-        mIcon,
-        color: Colors.redAccent,
-        size: 30,
-      ),
-      // 내가 원하는 크기만큼 사이간격주는
-      // 방법은 SizedBox(width / height)
-      SizedBox(
-        height: 5,
-      ),
-      // 3-2. 글자
-      Text(
-        text,
-        style:
-            TextStyle(color: Colors.red.shade900, fontWeight: FontWeight.bold),
-      )
-    ]),
+    child: Column(
+        // 박스 세로정렬 중앙
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // 3-1. 아이콘
+          Icon(
+            mIcon,
+            color: Colors.redAccent,
+            size: 30,
+          ),
+          // 내가 원하는 크기만큼 사이간격주는
+          // 방법은 SizedBox(width / height)
+          SizedBox(
+            height: 3,
+          ),
+          // 3-2. 글자
+          Text(
+            text,
+            style: TextStyle(
+                color: Colors.red.shade900, fontWeight: FontWeight.bold),
+          )
+        ]),
   );
 }
