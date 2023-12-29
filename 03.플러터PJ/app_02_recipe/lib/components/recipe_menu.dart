@@ -36,7 +36,30 @@ Widget _buildMenuItem(IconData mIcon, String text) {
     width: 70,
     height: 80,
     // 2. 박스 세부옵션 설정 - decoration
-    decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
+    decoration: BoxDecoration(
+        // 보더 속성
+        border: Border.all(color: Colors.black12),
+        //보더 라운드 속성
+        borderRadius: BorderRadius.circular(10),
+        // 그라데이션 속성
+        gradient: LinearGradient(
+            // 그라데이션 색상 지정
+            colors: [
+              Color.fromARGB(140, 224, 227, 0),
+              Color.fromARGB(100, 217, 22, 5),
+              Color.fromARGB(190, 180, 180, 20),
+              Color.fromARGB(100, 217, 22, 5),
+            ],
+            // 각 색상이 어디까지 변화할지 지정 (0.0~1.0)
+            stops: [
+              0.1,
+              0.4,
+              0.7,
+              0.9,
+            ],
+            // 그라데이션 시작위치 / 끝위치 지정
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight)),
     // 3. 박스 하위요소 속성 : 단일요소 -> child
     child: Column(
         // 박스 세로정렬 중앙
