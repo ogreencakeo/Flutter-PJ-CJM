@@ -32,7 +32,8 @@ class RecipePage extends StatelessWidget {
       body: Padding(
         // 상하/좌우 대칭 여백 패딩 설정(symmetric : 대칭적인)
         // symetric(horizontal : 숫자, vertical : 숫자)
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+        // const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         // Column 위젯대신 ListView 위젯을 사용해야 스크롤바 표시가 된다.
         child: ListView(
           children: [
@@ -78,6 +79,9 @@ AppBar _buildRecipeAppBar() {
         CupertinoIcons.heart,
         color: Colors.redAccent,
       ),
+      SizedBox(
+        width: 15,
+      ), // 사이간격 박스
     ],
   );
 } // _buildRecipeAppBar 메서드 ////////

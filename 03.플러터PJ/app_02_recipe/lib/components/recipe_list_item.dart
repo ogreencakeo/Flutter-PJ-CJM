@@ -17,27 +17,40 @@ class RecipeListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // 1. 이미지 : 맴버변수 imgeName 사용
-        Image.asset(
-          'images/$imageName.jpeg',
-        ),
-        SizedBox(
-          height: 10,
-        ), // 사이간격
-        // 2. 텍스트 : 맴버변수 title 사용
-        Text(
-          title,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: Column(
+        children: [
+          // 1. 이미지 : 맴버변수 imgeName 사용
+          // 비율설정 위젯 - AspectRatio
+          AspectRatio(
+            aspectRatio: 2 / 1,
+            // 사각 잘라내기 위젯
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                'images/$imageName.jpeg',
+                // 이미지 확장 채우기 (중요!!!)
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ), // 사이간격
+          // 2. 텍스트 : 맴버변수 title 사용
+          Text(
+            title,
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
 
-        // 3. 레시피 소개글
-        Text(
-          "당신은 당신이 직접 만든 $title를 가지고 계신가요? 만약 없다면 여기 쉽고 휼륭한 $title를 보고 따라해 보세요! 틀림 없이 좋은 결과를 만나실 겁니다!",
-          style: TextStyle(color: Colors.black, fontSize: 14),
-        )
-      ],
+          // 3. 레시피 소개글
+          Text(
+            "당신은 당신이 직접 만든 $title를 가지고 계신가요? 만약 없다면 여기 쉽고 휼륭한 $title를 보고 따라해 보세요! 틀림 없이 좋은 결과를 만나실 겁니다!",
+            style: TextStyle(color: Colors.black, fontSize: 14),
+          )
+        ],
+      ),
     );
   }
 }
