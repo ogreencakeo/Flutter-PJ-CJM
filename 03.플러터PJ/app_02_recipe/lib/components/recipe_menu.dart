@@ -45,14 +45,14 @@ Widget _buildMenuItem(IconData mIcon, String text) {
         gradient: LinearGradient(
             // 그라데이션 색상 지정
             colors: [
-              Color.fromARGB(140, 224, 227, 0),
+              Color.fromARGB(255, 243, 238, 162),
               Color.fromARGB(100, 217, 22, 5),
-              Color.fromARGB(190, 180, 180, 20),
-              Color.fromARGB(100, 217, 22, 5),
+              Color.fromARGB(189, 178, 218, 236),
+              Color.fromARGB(99, 155, 109, 216),
             ],
             // 각 색상이 어디까지 변화할지 지정 (0.0~1.0)
             stops: [
-              0.1,
+              0.2,
               0.4,
               0.7,
               0.9,
