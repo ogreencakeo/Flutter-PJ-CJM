@@ -33,13 +33,17 @@ class RecipePage extends StatelessWidget {
         // 상하/좌우 대칭 여백 패딩 설정(symmetric : 대칭적인)
         // symetric(horizontal : 숫자, vertical : 숫자)
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
+        // Column 위젯대신 ListView 위젯을 사용해야 스크롤바 표시가 된다.
+        child: ListView(
           children: [
             // 1. 레시피 페이지 전체 타이틀
             RecipeTitle(),
             // 2. 레시피 페이지 메뉴
             RecipeMenu(),
             // 3. 레시피 페이지 아이템
+            RecipeListItem('coffee', '커피 레시피'),
+            RecipeListItem('burger', '수제버거 레시피'),
+            RecipeListItem('pizza', '피자 레시피'),
           ],
         ),
       ),

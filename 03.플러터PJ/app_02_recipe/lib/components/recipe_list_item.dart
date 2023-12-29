@@ -21,7 +21,7 @@ class RecipeListItem extends StatelessWidget {
       children: [
         // 1. 이미지 : 맴버변수 imgeName 사용
         Image.asset(
-          'imges/$imageName.jpg',
+          'images/$imageName.jpeg',
         ),
         SizedBox(
           height: 10,
