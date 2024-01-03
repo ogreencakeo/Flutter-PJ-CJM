@@ -1,3 +1,4 @@
+import 'package:app_03_profile/components/profile_countInfo.dart';
 import 'package:flutter/material.dart';
 
 // 전체 테마 파일 불러오기
@@ -5,6 +6,12 @@ import 'package:app_03_profile/theme.dart';
 
 // 프로파일 헤더영역 불러오기
 import 'package:app_03_profile/components/profile_header.dart';
+
+// 사이드 박스 드로워 불러오기
+import 'package:app_03_profile/components/profile_drawer.dart';
+
+// 프로파일 카운트 정보 불러오기
+import 'package:app_03_profile/components/profile_countInfo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,12 +42,21 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // 상단 앱바 만들기함수 호출
+      // 사이드 박스 드로워는 drawer -> 왼쪽에서 들어옴
+      // endDrawer -> 오른쪽에서 들어옴
+      // 기본 작동은 햄버거 터치시 들어옴 / 빈곳 터치시 나감
+      endDrawer: ProfileDrawer(),
+      // 상단 앱바 만들기함수 호출 : 기본앱바
+      // 드로워가 있으면 햄버거 아이콘이 출력 됨!
       appBar: _buildProfileAppBar(),
       // 본문파트인 바디 구성하기
       body: Column(children: [
+        SizedBox(height: 20), // 위 아래 간격
         // 프로파일 헤더파트 : 인물사진 및 소개
         ProfileHeader(),
+        SizedBox(height: 20), // 위 아래 간격
+        // 프로파일 카운트 정보 : 컨텐츠카운트 정보
+        ProfileCountInfo()
       ]),
     );
   }
