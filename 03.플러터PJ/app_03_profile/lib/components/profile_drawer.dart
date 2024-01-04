@@ -15,6 +15,7 @@ class ProfileDrawer extends StatelessWidget {
       height: double.infinity,
       // 박스 배경색
       color: Colors.orange.shade200,
+      
     );
   }
 }

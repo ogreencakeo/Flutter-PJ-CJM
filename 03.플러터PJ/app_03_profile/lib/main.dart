@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 
 // 전체 테마 파일 불러오기
 import 'package:app_03_profile/theme.dart';
-
 // 프로파일 헤더영역 불러오기
 import 'package:app_03_profile/components/profile_header.dart';
-
 // 사이드 박스 드로워 불러오기
 import 'package:app_03_profile/components/profile_drawer.dart';
-
 // 프로파일 카운트 정보 불러오기
 import 'package:app_03_profile/components/profile_countInfo.dart';
+// 프로파일 카운트 정보 불러오기
+import 'package:app_03_profile/components/profile_buttons.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,11 +51,14 @@ class ProfilePage extends StatelessWidget {
       // 본문파트인 바디 구성하기
       body: Column(children: [
         SizedBox(height: 20), // 위 아래 간격
-        // 프로파일 헤더파트 : 인물사진 및 소개
+        // 1. 프로파일 헤더파트 : 인물사진 및 소개
         ProfileHeader(),
         SizedBox(height: 20), // 위 아래 간격
-        // 프로파일 카운트 정보 : 컨텐츠카운트 정보
-        ProfileCountInfo()
+        // 2. 프로파일 카운트 정보 : 컨텐츠카운트 정보
+        ProfileCountInfo(),
+        SizedBox(height: 20), // 위 아래 간격
+        // 3. 프로파일 버튼
+        ProfileButtons(),
       ]),
     );
   }
