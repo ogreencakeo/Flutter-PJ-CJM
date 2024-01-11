@@ -20,7 +20,7 @@ class CustomTextFormField extends StatelessWidget {
         // 2. 텍스트 입력폼 양식 -> TextFormField()
         TextFormField(
           // 2-1.유효성 검사 셋팅 (출력 메시지)
-          // !(느낌표)는 절때 null이 아님을 의미한다.
+          // !(느낌표)는 절때 null이 아님을 의미한다. (컴파일러에 알림)
           // 비었으면 메시지 / null은 메시지 없음
           validator: (value) => value!.isEmpty? "Please enter some text" : null 
         ),
