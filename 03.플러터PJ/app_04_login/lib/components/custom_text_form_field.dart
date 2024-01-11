@@ -37,6 +37,10 @@ class CustomTextFormField extends StatelessWidget {
             // 테두리 디자인 설정하기
               borderRadius: BorderRadius.circular(20)
             ),
+
+            // 터치시 / 에러시 / 에러후 터치 시 상태에 대한 기본 디자인은
+            // 밑줄형으로 되어 있으므로 이 디자인을 덮어써야 내가 원하는
+            // 디자인을 유지할 수 있다. 따라서 필수 셋팅임!
             
             // 2-3-3. 터치시 (포커스 갈때) TextFormField 디자인
             focusedBorder:  OutlineInputBorder(
