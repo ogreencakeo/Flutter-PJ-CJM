@@ -26,10 +26,11 @@ class CoustomForm extends StatelessWidget {
           // 1.이메일 입력양식 (글자 + 입력폼)
           CustomTextFormField('Email'),
           SizedBox(height: mediumGap),
+
           // 2.비밀번호 입력양식 (글자 + 입력폼)
           CustomTextFormField('Password'),
-
           SizedBox(height: largeGap),
+
           // 3.TextButton 로그인 버튼
           TextButton(
             // 대상을 누를때 발생
@@ -39,7 +40,7 @@ class CoustomForm extends StatelessWidget {
               // pushNamed() 메서드로!!!
 
               // 유효성 검사에 전역 키를 사용함
-              // 유효성 검사 속성셋팅된 것과 메서드로 연결하여 true이면 
+              // 유효성 검사 속성셋팅된 것과 메서드로 연결하여 true이면
               // 페이지 이동함
               if (_formKey.currentState!.validate()) {
                 Navigator.pushNamed(context, '/home');

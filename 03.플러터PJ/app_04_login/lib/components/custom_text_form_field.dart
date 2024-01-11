@@ -13,6 +13,8 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     // 필드 설명과 입력 양식폼은수직으로 배치됨
     return Column(
+      // 크로스축 정렬 변경 (왼쪽정렬 : start)
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // 1. 필드설명
         Text(text),
