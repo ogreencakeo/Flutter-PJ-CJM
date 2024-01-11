@@ -39,6 +39,8 @@ class CoustomForm extends StatelessWidget {
               // pushNamed() 메서드로!!!
 
               // 유효성 검사에 전역 키를 사용함
+              // 유효성 검사 속성셋팅된 것과 메서드로 연결하여 true이면 
+              // 페이지 이동함
               if (_formKey.currentState!.validate()) {
                 Navigator.pushNamed(context, '/home');
               } // if ///////
