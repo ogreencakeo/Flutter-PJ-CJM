@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
           children: [
             SizedBox(height: xLargeGap),
             Logo('Dart Soft'),
-            SizedBox(height: smallGap),
+            SizedBox(height: xLargeGap),
             TextButton(
               onPressed: () {
                 // 현재는 갈곳이 없으므로 다시 로그인으로!
