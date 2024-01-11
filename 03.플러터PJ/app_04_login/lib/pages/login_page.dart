@@ -16,17 +16,18 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 20),
           // 로고보이기
           Logo('Login'),
+
           // 임시 이동 버튼
-          TextButton(
-            // 대상을 누를때 발생
-            onPressed: () {
-              // debugPrint('나눌렸어?');
-              // 라우터 이동은 Navigator
-              // pushNamed() 메서드로!!!
-              Navigator.pushNamed(context, '/home');
-            },
-            child: Text('Go to Home!'),
-          )
+          // TextButton(
+          //   // 대상을 누를때 발생
+          //   onPressed: () {
+          //     // debugPrint('나눌렸어?');
+          //     // 라우터 이동은 Navigator
+          //     // pushNamed() 메서드로!!!
+          //     Navigator.pushNamed(context, '/home');
+          //   },
+          //   child: Text('Go to Home!'),
+          // )
         ],
       ),
     );
