@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 //로고 위젯 추가
 import 'package:app_04_login/components/logo.dart';
+// 사이즈 프리셋팅
+import 'package:app_04_login/size.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -13,9 +15,11 @@ class LoginPage extends StatelessWidget {
       // 하단 입력 키보드가 올라올때 대비할 수 있다!
       body: ListView(
         children: [
-          SizedBox(height: 20),
+          SizedBox(height: xLargeGap),
           // 로고보이기
           Logo('Login'),
+          SizedBox(height: largeGap),
+          // 입력폼 양식 위젯 (폼요소 위젯 포함)
 
           // 임시 이동 버튼
           // TextButton(
