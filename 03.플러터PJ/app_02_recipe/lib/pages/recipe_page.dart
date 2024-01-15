@@ -30,7 +30,7 @@ class RecipePage extends StatelessWidget {
       appBar: _buildRecipeAppBar(),
       // 3. body 구현하기
       body: Padding(
-        // 상하/좌우 대칭 여백 패딩 설정(symmetric : 대칭적인)
+        // 상하/좌우 대칭 여백 패딩 설정(symmetric : 대칭적인)c
         // symetric(horizontal : 숫자, vertical : 숫자)
         padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
         // const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
