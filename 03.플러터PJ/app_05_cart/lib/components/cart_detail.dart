@@ -50,6 +50,14 @@ class _CartDetailState extends State<CartDetail> {
     "Cessna 150": [12400, 75, 6],
   };
 
+  // 상품색상 리스트
+  Map<String, List> goodsColor = {
+    "Living bicycle": [Colors.red, Colors.blue,],
+    "Honda motorcycle": [Colors.grey.shade400, Colors.blue, Colors.purple],
+    "Tesla Model3": [Colors.pink, Colors.yellow, Colors.green],
+    "Cessna 150": [Colors.orange, Colors.blueAccent, Colors.blueGrey, Colors.lightGreen],
+  };
+
   // 빌드 재정의!!!
   @override
   Widget build(BuildContext context) {
@@ -219,6 +227,9 @@ class _CartDetailState extends State<CartDetail> {
 
   // 3. 옵션 위젯 만들기 메서드 : _buildOption()
   Widget _buildOption(){
+    // 선택색상 정보 변수에 셋업하기 (해당 타이틀명의 GoodsColor 맵)
+    dynamic selectedColor = goodsColor[selectedTit[sequenceNum]];
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 20.0),
       child: Column(
@@ -229,11 +240,10 @@ class _CartDetailState extends State<CartDetail> {
           Row(
             children: [
               // 둥근 모양의 색상 아이콘 메서드 호출
-              _buildDetailIcon(Colors.black),
-              _buildDetailIcon(Colors.green),
-              _buildDetailIcon(Colors.orange),
-              _buildDetailIcon(Colors.grey),
-              _buildDetailIcon(Colors.white),
+              // 선택된 색상옵션은 리스트형으로
+              // for문으로 그 개수만큼 돌아준다.
+              for(int i=0; i<selectedColor.length; i++) _buildDetailIcon(selectedColor[i]),
+              
             ],
           )
         ]
@@ -245,21 +255,30 @@ class _CartDetailState extends State<CartDetail> {
   Widget _buildDetailIcon(Color mColor) {
     return Padding(
       padding: const EdgeInsets.only(right: 10),
-      // 5. Stack의 첫 번째 Container 위젯위에 Positioned 위젯이 올라가는 형태
+      // 5. Stack의 첫 번째 Container 
+      // 위젯위에 Positioned 위젯이 올라가는 형태
+      // 스택위젯은 겹쳐지는 디자인을 할 때 사용함
+      // 스택은 아래로부터 위로 겹쳐져 쌓이는 형태를 이름
+      // 내부에 겹쳐질 위젯은 Positioned() 위젯을 사용함
+      // 이 위젯은 웹에서 absolute 포지션과 유사함!
+      // (top, left 사용가능)
       child: Stack(
         children: [
           Container(
             width: 50,
             height: 50,
+            // 둥근 디자인
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(),
               shape: BoxShape.circle,
             ),
           ),
+          // 겹쳐질 위젯 넣기
           Positioned(
             left: 5,
             top: 5,
+            // ClipOval() 위젯 - 둥근모양위젯 (잘라줌)
             child: ClipOval(
               child: Container(
                 color: mColor,
@@ -275,8 +294,52 @@ class _CartDetailState extends State<CartDetail> {
   
   // 4. 버튼 위젯 만들기 메서드 : _buildButton()
   Widget _buildButton(){
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
+    return Align(
+      child: TextButton(
+        onPressed: (){
+          // 장바구니 담기 확인 메시지창 
+          // 쿠퍼티노 다이럴로그 사용
+          showCupertinoDialog(
+            // 앱현재 통합정보 context
+            context: context, 
+            builder: (context) => 
+              CupertinoAlertDialog(
+                // 대화창 메시지
+                title: Text('장바구니에 담았습니다!'),
+                // 팝업창 버튼 터치시 동작액션 : 닫기
+                actions: [
+                  // 쿠퍼티노 액션 담당 클래스 생성자 함수
+                  CupertinoDialogAction(
+                    onPressed: (){
+                      // pop()으로 context를 보내면
+                      // 현재 뜬 대화창이 닫힌다!
+                      Navigator.pop(context);
+                    },
+                    // 대화창 구성버튼
+                    child: Text(
+                      '확인',
+                      style: TextStyle(color:  Colors.blue),
+                    ),
+                  ),
+                ],
+              ),
+          );
+        },
+        style: TextButton.styleFrom(
+          // 배경색
+          backgroundColor: kAccentColor,
+          // 최소 사이즈
+          minimumSize: Size(300, 50),
+          // 둥근 모서리
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          )
+        ),
+        child: Text(
+          'Add to Cart',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
     );
   } // _buildButton 메서드 ////
 
