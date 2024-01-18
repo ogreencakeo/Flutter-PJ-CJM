@@ -59,10 +59,10 @@ class _SpaoItemInfoState extends State<SpaoItemInfo> {
   // 1. 상품 이미지
   Widget _buildPicter(){
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(30.0),
       child: 
         AspectRatio(
-          aspectRatio: 1/1,
+          aspectRatio: 1/1.6,
           child: Image.asset(
             selectedPic[sequenceNum],
             fit: BoxFit.cover,
